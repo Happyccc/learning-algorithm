@@ -33,7 +33,7 @@
 
 - python中的hash表有：字典(dictionary)、集合(set)、计数器(counter)、默认字典Defaut dict)、有序字典(Order dict).
 - python的hash表(字典)特点：键值对无序；键和值可以是任意对象；在字典中不能再有序列操作
-- python实现hash表：[blog1](https://blog.csdn.net/qq_16000815/article/details/81317314)[blog2](https://www.cnblogs.com/kumata/p/9157738.html),注意，在python中标准散列机制有hash函数提供，调用一个对象的__hash__方法:
+- python实现hash表：[blog1](https://blog.csdn.net/qq_16000815/article/details/81317314)、[blog2](https://www.cnblogs.com/kumata/p/9157738.html),注意，在python中标准散列机制有hash函数提供，调用一个对象的__hash__方法:
 ```python
 hash(42)
 hash("Hello,world!")
