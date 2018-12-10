@@ -31,7 +31,7 @@ class Solution(object):
             newList = head
             head = tmp
         return newList
-#设置两个指针分别指向当前节点和下一个节点,一个变量存储q指针下一步指向的链表
+#设置两个指针p和q分别指向当前节点和下一个节点,一个变量存储q指针下一步指向的链表
 class Solution(object):
     def reverseList_2pointers(self, head):
     """
@@ -44,10 +44,10 @@ class Solution(object):
         q = head.next
         p.next = None
         while q:
-            r = q.next
+            tmp = q.next
             q.next = p
             p = q
-            q = r
+            q = tmp
         return p
 
 
@@ -61,7 +61,25 @@ class Solution(object):
         if head==None or head.next==None:
             return head
         else:
-            newHead = Solution().reverseList_recursive(head.next)
+            newList = Solution().reverseList_recursive(head.next)
             head.next.next = head
             head.next = None
-        return newHead
+        return newList
+
+## 逐个插入法
+class Solution(object):
+    def reverseList_tailInsert(self, head):
+        """使用逐个插入法"""
+        if head==None or head.next==None:
+            return head
+        p = head.next
+        while p.next:
+            q = p.next
+            p.next = q.next
+            q.next = head.next
+            head.next = q
+
+        p.next = head
+        head = p.next.next
+        p.next.next = None
+        return head
