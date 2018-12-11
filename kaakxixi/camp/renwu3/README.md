@@ -24,7 +24,7 @@ leetcode地址 https://leetcode-cn.com/problems/binary-tree-level-order-traversa
   - 二叉树的第i层至多有2^{i-1}个结点
   - 深度为k的二叉树至多有2^k-1个结点；
   - 对任何一棵二叉树T，如果其终端结点数为N0，度为2的结点数为N2，则N0=N2+1
-- 二叉树的遍历(python实现)[https://blog.csdn.net/lq_lq314/article/details/79176953]：
+- 二叉树的遍历[python实现](https://blog.csdn.net/lq_lq314/article/details/79176953)：
   - 前序遍历：根左右
   - 中序遍历：左根右
   - 后续遍历：左右根
