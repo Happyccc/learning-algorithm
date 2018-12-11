@@ -35,7 +35,7 @@ class Solution(object):
         if root == None:
             return []
         queue = []   #构建队列
-        queue.append(root) #添加树
+        queue.append(root) #root入队
         res = [] #结果列表
  
         while queue:
@@ -51,7 +51,7 @@ class Solution(object):
                     nodes.append(i.right)
             # 节点值
                 vals += [i.val]
-            # 把下一层的节点列表赋给队列
+            # root出队，下一层左右子节点入队
             queue = nodes
             res = [vals] + res  #结果列表：汇总各层节点值列表
         return res
