@@ -87,3 +87,30 @@ class Solution(object):
         while node.next:
             node = node.next
         return node
+
+"""插入排序 """
+class Solution(object):
+    def sortList(self, head):
+        """
+        :type head: ListNode
+        :rtype: ListNode
+        """
+        if head == None or head.next == None:
+    		return head
+    	dummy = ListNode(0)
+    	dummy.next = head
+    	cur = head
+    	while cur.next != None:
+    		if cur.next.val < cur.val:
+    			pre = dummy
+    			while pre.next.val < cur.next.val:
+    				pre = pre.next
+    			temp = cur.next
+    			cur.next = temp.next
+    			temp.next = pre.next
+    			pre.next = temp
+    		else:
+    			cur = cur.next
+        return dummy.next
+
+    
