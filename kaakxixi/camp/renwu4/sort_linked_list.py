@@ -113,4 +113,39 @@ class Solution(object):
     			cur = cur.next
         return dummy.next
 
-    
+"""归并排序"""
+class Solution(object):
+    def sortList(self, head):
+        """
+        :type head: ListNode
+        :rtype: ListNode
+        """
+        if not head or not head.next:
+            return head
+        fast = slow = pre = head
+        while fast and fast.next:    # Mark: pre
+            pre = slow
+            slow = slow.next
+            fast = fast.next.next
+        pre.next = None
+
+        left = self.sortList(head)
+        right = self.sortList(slow)
+        return self.merge(left, right)
+
+    def merge(self, left, right):
+        dummy = ListNode(-1)
+        p = dummy
+        while left and right:
+            if left.val < right.val:
+                p.next = left
+                left = left.next
+            else:
+                p.next = right
+                right = right.next
+            p = p.next
+        if left:
+            p.next = left
+        else:
+            p.next = right
+        return dummy.next
