@@ -1,6 +1,7 @@
 ## 贪吃蛇游戏
 
 2018-12-15 视频地址 https://www.bilibili.com/video/av29129628/
+[snake-ai](https://github.com/Hawstein/snake-ai)也比较有意思
 
 ### 注意事项
 
